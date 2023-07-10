@@ -9,12 +9,9 @@ interface TodosProps {
 
 export default function Todos({ todos, onRemoveTodo, onToggleCompleted }: TodosProps) {
   return (
-    <ul>
+    <ul className='todos-list'>
       {todos.map((todo) => (
-        <li
-          className={`${todo.completed ? 'completed' : 'no-completed'}`}
-          key={todo.id}
-        >
+        <li key={todo.id}>
           <Todo
             id={todo.id}
             title={todo.title}

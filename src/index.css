@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply flex justify-center py-20 w-screen
+}
+
+.todos-list {
+  @apply bg-yellow-200 px-8 py-6 space-y-4 rounded-lg shadow-lg w-full
+}
+
+.todo-item {
+  @apply flex flex-row items-center justify-between gap-4 py-2 px-3 rounded-lg border border-slate-800 hover:border-orange-600 bg-white
+}
+
+.label-todo {
+  @apply w-full
+}
+
+.l-complet {
+  @apply text-slate-500 line-through
+}
+
+.button-trash {
+  @apply p-2 rounded-full flex items-center justify-center hover:bg-slate-100
+}
+
+.trash {
+  @apply text-red-400 group-hover:text-red-700
+}
+
+.toggle {
+  @apply w-6 h-5 border-2 border-green-600 rounded-sm checked:bg-green-300 text-black
+}

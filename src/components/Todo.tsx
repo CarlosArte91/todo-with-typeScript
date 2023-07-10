@@ -1,5 +1,7 @@
 import { type Todo, type TodoId } from '../types'
 
+import { FaRegTrashAlt } from 'react-icons/fa'
+
 interface TodoProps extends Todo {
   onRemoveTodo: ({ id }: TodoId) => void
   onToggleCompleted: ({ id, completed }: Pick<Todo, 'id' | 'completed'>) => void
@@ -15,7 +17,7 @@ export default function Todo({ id, title, completed, onRemoveTodo, onToggleCompl
   }
 
   return (
-    <div className='view'>
+    <div className='todo-item'>
       <input
         className='toggle'
         type='checkbox'
@@ -23,15 +25,17 @@ export default function Todo({ id, title, completed, onRemoveTodo, onToggleCompl
         onChange={handleToggleCompleted}
       />
 
-      <label className='label-todo'>
+      <label
+        className={`label-todo ${completed ? 'l-complet' : 'l-no-complet'}`}
+      >
         {title}
       </label>
 
       <button
-        className='destroy'
+        className='button-trash group'
         onClick={handleRemove}
       >
-        X
+        <FaRegTrashAlt className='trash' />
       </button>
     </div>
   )
